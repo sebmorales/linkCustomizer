@@ -25,17 +25,30 @@ var offDomX=20;
 var img;
 var offDomY=20;
 
+var colorPaletDia=20;
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   link = loadModel('assets/unityMain.obj', true);
   linkEnd = loadModel('assets/unityLink.obj', true);
   gui();
+  //camera(0,0,0);
   directionalLight(180, 180, 180, -.1, -.003, 1.2);
 //  directionalLight(255, 255, 255, 0, 0, 1);
 
 }
 
 function draw() {
+	  // push();
+	  // specularMaterial(111, 200, 100);
+	  // //line
+	  // translate(-windowWidth/2, -windowHeight/2+300, 0);
+  	// ellipse(50,50,0,20,20);
+  	// //print("x: "+mouseX+ " y: "+mouseY);
+  
+   // pop();
+	
+	
 	if(emailSent){
 		background(40);
 	
@@ -375,4 +388,16 @@ function changeSize() {
     //directionalLight(180, 180, 180, -.1, -.003, 1.4);
     dimSpacing=75;
   }
+}
+
+function drawing2D(){
+	for(var i = 0; i < 500; i+=100){
+	  push();
+	  fill(i * 0.1, 100, 100);
+	
+	  //line
+	  translate(0, 100, 0);
+	  line(-100, 0, i, 100, 0, i);
+	  pop();
+	}
 }
